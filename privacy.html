@@ -77,33 +77,332 @@
     color: var(--muted);
     font-size: .92rem;
   }
+  [hidden] { display: none !important; }
+  .lang-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin: -1.25rem 0 1rem;
+  }
+  .lang-bar select {
+    font: inherit;
+    font-size: .9rem;
+    line-height: 1.3;
+    max-width: 100%;
+    color: var(--text);
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: .3rem .5rem;
+    color-scheme: light dark;
+    cursor: pointer;
+  }
+  .lang-bar select:focus-visible {
+    outline: 2px solid var(--muted);
+    outline-offset: 2px;
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="lang-bar" id="lang-bar" hidden>
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">No Contact: Closure &middot; Last updated 23 September 2026</p>
-  <h2>The short version</h2>
-  <p>We don't collect your data. Everything you enter — your relationship history, journal entries, coach messages, unsent messages, and relapse log — stays on your device. If you use iCloud, it syncs only to your own private iCloud account, which we cannot see or access. There are no servers that store your personal content, no analytics SDK, no advertising SDK, and no third party that receives your data.</p>
-  <h2>What we collect</h2>
-  <p>Nothing that identifies you. The app doesn't require an account, an email address, or a login. Purchases are handled entirely by Apple through the App Store; we never see your payment details.</p>
-  <h2>iCloud sync</h2>
-  <p>If you're signed into iCloud, your data may sync across your own devices using Apple's CloudKit, in your own private database. We do not have access to this data.</p>
-  <h2>Notifications</h2>
-  <p>If you turn on notifications, they are scheduled locally on your device. No notification content passes through a remote server.</p>
-  <h2>The coach</h2>
-  <p>In the current version, coach responses are generated on your device and are never transmitted anywhere. If a future version adds a cloud-based coach, this policy will be updated before that version ships, describing exactly what is sent and to whom.</p>
-  <h2>Deleting your data</h2>
-  <p>Deleting the app removes all data stored on your device. If you used iCloud sync, you can also remove it in Settings &rsaquo; [your name] &rsaquo; iCloud &rsaquo; Manage Account Storage.</p>
-  <h2>Children</h2>
-  <p>This app is not directed at children and is intended for users aged 17 and older, given its subject matter.</p>
-  <h2>Changes to this policy</h2>
-  <p>If what the app collects ever changes, this page will change with it, and the change will be noted in the app's release notes.</p>
-  <h2>Contact</h2>
-  <div class="contact"><p><strong>Email:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  <section id="lang-en" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="meta">No Contact: Closure &middot; Last updated 23 September 2026</p>
+    <h2>The short version</h2>
+    <p>We don't collect your data. Everything you enter — your relationship history, journal entries, coach messages, unsent messages, and relapse log — stays on your device. If you use iCloud, it syncs only to your own private iCloud account, which we cannot see or access. There are no servers that store your personal content, no analytics SDK, no advertising SDK, and no third party that receives your data.</p>
+    <h2>What we collect</h2>
+    <p>Nothing that identifies you. The app doesn't require an account, an email address, or a login. Purchases are handled entirely by Apple through the App Store; we never see your payment details.</p>
+    <h2>iCloud sync</h2>
+    <p>If you're signed into iCloud, your data may sync across your own devices using Apple's CloudKit, in your own private database. We do not have access to this data.</p>
+    <h2>Notifications</h2>
+    <p>If you turn on notifications, they are scheduled locally on your device. No notification content passes through a remote server.</p>
+    <h2>The coach</h2>
+    <p>In the current version, coach responses are generated on your device and are never transmitted anywhere. If a future version adds a cloud-based coach, this policy will be updated before that version ships, describing exactly what is sent and to whom.</p>
+    <h2>Deleting your data</h2>
+    <p>Deleting the app removes all data stored on your device. If you used iCloud sync, you can also remove it in Settings &rsaquo; [your name] &rsaquo; iCloud &rsaquo; Manage Account Storage.</p>
+    <h2>Children</h2>
+    <p>This app is not directed at children and is intended for users aged 17 and older, given its subject matter.</p>
+    <h2>Changes to this policy</h2>
+    <p>If what the app collects ever changes, this page will change with it, and the change will be noted in the app's release notes.</p>
+    <h2>Contact</h2>
+    <div class="contact"><p><strong>Email:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
 
-  <footer>No Contact: Closure &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="support.html">Support</a></footer>
+  <section id="lang-de" lang="de" hidden>
+    <h1>Datenschutzerklärung</h1>
+    <p class="meta">No Contact: Closure &middot; Zuletzt aktualisiert am 23. September 2026</p>
+    <h2>Kurzfassung</h2>
+    <p>Wir erheben deine Daten nicht. Alles, was du eingibst – deine Beziehungsgeschichte, Tagebucheinträge, Coach-Nachrichten, nicht gesendete Nachrichten und dein Rückfallprotokoll –, bleibt auf deinem Gerät. Wenn du iCloud nutzt, werden die Daten ausschließlich mit deinem eigenen privaten iCloud-Account synchronisiert, den wir weder einsehen noch auf ihn zugreifen können. Es gibt keine Server, die deine persönlichen Inhalte speichern, kein Analyse-SDK, kein Werbe-SDK und keine Dritten, die deine Daten erhalten.</p>
+    <h2>Was wir erheben</h2>
+    <p>Nichts, was dich identifiziert. Die App erfordert keinen Account, keine E-Mail-Adresse und keine Anmeldung. Käufe werden vollständig von Apple über den App Store abgewickelt; deine Zahlungsdaten sehen wir nie.</p>
+    <h2>iCloud-Synchronisierung</h2>
+    <p>Wenn du bei iCloud angemeldet bist, können deine Daten über Apples CloudKit zwischen deinen eigenen Geräten synchronisiert werden, und zwar in deiner eigenen privaten Datenbank. Wir haben keinen Zugriff auf diese Daten.</p>
+    <h2>Mitteilungen</h2>
+    <p>Wenn du Mitteilungen aktivierst, werden sie lokal auf deinem Gerät geplant. Kein Mitteilungsinhalt läuft über einen externen Server.</p>
+    <h2>Der Coach</h2>
+    <p>In der aktuellen Version werden die Antworten des Coachs auf deinem Gerät erzeugt und niemals irgendwohin übertragen. Falls eine zukünftige Version einen cloudbasierten Coach einführt, wird diese Datenschutzerklärung vor der Veröffentlichung dieser Version aktualisiert und beschreibt dann genau, was an wen gesendet wird.</p>
+    <h2>Deine Daten löschen</h2>
+    <p>Wenn du die App löschst, werden alle auf deinem Gerät gespeicherten Daten entfernt. Wenn du die iCloud-Synchronisierung genutzt hast, kannst du die Daten außerdem unter Einstellungen &rsaquo; [dein Name] &rsaquo; iCloud &rsaquo; Accountspeicher verwalten entfernen.</p>
+    <h2>Kinder</h2>
+    <p>Diese App richtet sich nicht an Kinder und ist aufgrund ihres Themas für Personen ab 17 Jahren bestimmt.</p>
+    <h2>Änderungen dieser Datenschutzerklärung</h2>
+    <p>Falls sich jemals ändert, welche Daten die App erhebt, ändert sich auch diese Seite, und die Änderung wird in den Versionshinweisen der App vermerkt.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-Mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-nl" lang="nl" hidden>
+    <h1>Privacybeleid</h1>
+    <p class="meta">No Contact: Closure &middot; Laatst bijgewerkt op 23 september 2026</p>
+    <h2>De korte versie</h2>
+    <p>We verzamelen je gegevens niet. Alles wat je invoert – je relatiegeschiedenis, dagboekitems, coachberichten, niet-verzonden berichten en je terugvallogboek – blijft op je apparaat. Als je iCloud gebruikt, wordt het alleen gesynchroniseerd met je eigen privé-iCloud-account, dat wij niet kunnen zien of openen. Er zijn geen servers die je persoonlijke inhoud opslaan, geen analyse-SDK, geen advertentie-SDK en geen derde partij die je gegevens ontvangt.</p>
+    <h2>Wat we verzamelen</h2>
+    <p>Niets waarmee je te identificeren bent. De app vereist geen account, geen e-mailadres en geen inlog. Aankopen worden volledig door Apple via de App Store afgehandeld; wij zien je betaalgegevens nooit.</p>
+    <h2>iCloud-synchronisatie</h2>
+    <p>Als je bent ingelogd bij iCloud, kunnen je gegevens via Apples CloudKit tussen je eigen apparaten worden gesynchroniseerd, in je eigen privédatabase. Wij hebben geen toegang tot deze gegevens.</p>
+    <h2>Meldingen</h2>
+    <p>Als je meldingen inschakelt, worden ze lokaal op je apparaat ingepland. Geen enkele meldingsinhoud gaat via een externe server.</p>
+    <h2>De coach</h2>
+    <p>In de huidige versie worden de antwoorden van de coach op je apparaat gegenereerd en nooit ergens naartoe verzonden. Als een toekomstige versie een cloudgebaseerde coach toevoegt, wordt dit beleid bijgewerkt voordat die versie uitkomt, met een exacte beschrijving van wat er naar wie wordt verzonden.</p>
+    <h2>Je gegevens verwijderen</h2>
+    <p>Als je de app verwijdert, worden alle gegevens op je apparaat verwijderd. Als je iCloud-synchronisatie hebt gebruikt, kun je die gegevens ook verwijderen via Instellingen &rsaquo; [je naam] &rsaquo; iCloud &rsaquo; Beheer accountopslag.</p>
+    <h2>Kinderen</h2>
+    <p>Deze app is niet gericht op kinderen en is, gezien het onderwerp, bedoeld voor gebruikers van 17 jaar en ouder.</p>
+    <h2>Wijzigingen in dit beleid</h2>
+    <p>Als er ooit iets verandert aan wat de app verzamelt, verandert deze pagina mee en wordt de wijziging vermeld in de releasenotes van de app.</p>
+    <h2>Contact</h2>
+    <div class="contact"><p><strong>E-mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-fr" lang="fr" hidden>
+    <h1>Politique de confidentialité</h1>
+    <p class="meta">No Contact: Closure &middot; Dernière mise à jour le 23 septembre 2026</p>
+    <h2>En bref</h2>
+    <p>Nous ne collectons pas tes données. Tout ce que tu saisis — l'historique de ta relation, tes entrées de journal, tes messages avec le coach, tes messages non envoyés et ton journal de rechutes — reste sur ton appareil. Si tu utilises iCloud, tes données sont synchronisées uniquement avec ton propre compte iCloud privé, que nous ne pouvons ni voir ni consulter. Aucun serveur ne stocke ton contenu personnel, il n'y a aucun SDK d'analyse, aucun SDK publicitaire et aucun tiers ne reçoit tes données.</p>
+    <h2>Ce que nous collectons</h2>
+    <p>Rien qui permette de t'identifier. L'app ne nécessite ni compte, ni adresse e-mail, ni connexion. Les achats sont entièrement gérés par Apple via l'App Store ; nous ne voyons jamais tes informations de paiement.</p>
+    <h2>Synchronisation iCloud</h2>
+    <p>Si ta session iCloud est ouverte, tes données peuvent être synchronisées entre tes propres appareils grâce à CloudKit d'Apple, dans ta propre base de données privée. Nous n'avons pas accès à ces données.</p>
+    <h2>Notifications</h2>
+    <p>Si tu actives les notifications, elles sont programmées localement sur ton appareil. Aucun contenu de notification ne transite par un serveur distant.</p>
+    <h2>Le coach</h2>
+    <p>Dans la version actuelle, les réponses du coach sont générées sur ton appareil et ne sont jamais transmises nulle part. Si une future version ajoute un coach basé sur le cloud, cette politique sera mise à jour avant la sortie de cette version, en décrivant précisément ce qui est envoyé et à qui.</p>
+    <h2>Supprimer tes données</h2>
+    <p>Supprimer l'app efface toutes les données stockées sur ton appareil. Si tu as utilisé la synchronisation iCloud, tu peux aussi les supprimer dans Réglages &rsaquo; [ton nom] &rsaquo; iCloud &rsaquo; Gérer l'espace de stockage du compte.</p>
+    <h2>Enfants</h2>
+    <p>Cette app ne s'adresse pas aux enfants et, compte tenu de son sujet, elle est destinée aux personnes âgées de 17 ans et plus.</p>
+    <h2>Modifications de cette politique</h2>
+    <p>Si ce que l'app collecte change un jour, cette page changera en conséquence, et la modification sera indiquée dans les notes de version de l'app.</p>
+    <h2>Contact</h2>
+    <div class="contact"><p><strong>E-mail&nbsp;:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-it" lang="it" hidden>
+    <h1>Informativa sulla privacy</h1>
+    <p class="meta">No Contact: Closure &middot; Ultimo aggiornamento: 23 settembre 2026</p>
+    <h2>In breve</h2>
+    <p>Non raccogliamo i tuoi dati. Tutto ciò che inserisci — la storia della tua relazione, le voci del diario, i messaggi con il coach, i messaggi non inviati e il registro delle ricadute — resta sul tuo dispositivo. Se usi iCloud, i dati vengono sincronizzati solo con il tuo account iCloud privato, che noi non possiamo né vedere né consultare. Non ci sono server che conservano i tuoi contenuti personali, nessun SDK di analisi, nessun SDK pubblicitario e nessuna terza parte che riceve i tuoi dati.</p>
+    <h2>Cosa raccogliamo</h2>
+    <p>Nulla che ti identifichi. L'app non richiede un account, un indirizzo email né un login. Gli acquisti sono gestiti interamente da Apple tramite l'App Store; non vediamo mai i tuoi dati di pagamento.</p>
+    <h2>Sincronizzazione iCloud</h2>
+    <p>Se hai effettuato l'accesso a iCloud, i tuoi dati possono essere sincronizzati tra i tuoi dispositivi tramite CloudKit di Apple, nel tuo database privato. Non abbiamo accesso a questi dati.</p>
+    <h2>Notifiche</h2>
+    <p>Se attivi le notifiche, vengono programmate localmente sul tuo dispositivo. Nessun contenuto delle notifiche passa attraverso un server remoto.</p>
+    <h2>Il coach</h2>
+    <p>Nella versione attuale, le risposte del coach vengono generate sul tuo dispositivo e non vengono mai trasmesse altrove. Se una versione futura introdurrà un coach basato sul cloud, questa informativa verrà aggiornata prima del rilascio di quella versione, descrivendo esattamente cosa viene inviato e a chi.</p>
+    <h2>Eliminare i tuoi dati</h2>
+    <p>Eliminando l'app rimuovi tutti i dati salvati sul tuo dispositivo. Se hai usato la sincronizzazione iCloud, puoi rimuoverli anche da Impostazioni &rsaquo; [il tuo nome] &rsaquo; iCloud &rsaquo; Gestisci spazio account.</p>
+    <h2>Minori</h2>
+    <p>Questa app non è rivolta ai minori ed è destinata a utenti dai 17 anni in su, dato l'argomento trattato.</p>
+    <h2>Modifiche a questa informativa</h2>
+    <p>Se ciò che l'app raccoglie dovesse cambiare, questa pagina cambierà di conseguenza e la modifica sarà indicata nelle note di rilascio dell'app.</p>
+    <h2>Contatti</h2>
+    <div class="contact"><p><strong>Email:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-es" lang="es" hidden>
+    <h1>Política de privacidad</h1>
+    <p class="meta">No Contact: Closure &middot; Última actualización: 23 de septiembre de 2026</p>
+    <h2>En resumen</h2>
+    <p>No recopilamos tus datos. Todo lo que introduces —tu historia sentimental, las entradas del diario, los mensajes con el coach, los mensajes sin enviar y el registro de recaídas— se queda en tu dispositivo. Si usas iCloud, solo se sincroniza con tu propia cuenta privada de iCloud, que nosotros no podemos ver y a la que no podemos acceder. No hay servidores que almacenen tu contenido personal, ni SDK de analítica, ni SDK publicitario, ni terceros que reciban tus datos.</p>
+    <h2>Qué recopilamos</h2>
+    <p>Nada que te identifique. La app no requiere cuenta, dirección de correo electrónico ni inicio de sesión. Las compras las gestiona íntegramente Apple a través del App Store; nunca vemos tus datos de pago.</p>
+    <h2>Sincronización con iCloud</h2>
+    <p>Si tienes la sesión iniciada en iCloud, tus datos pueden sincronizarse entre tus propios dispositivos mediante CloudKit de Apple, en tu propia base de datos privada. No tenemos acceso a estos datos.</p>
+    <h2>Notificaciones</h2>
+    <p>Si activas las notificaciones, se programan localmente en tu dispositivo. Ningún contenido de las notificaciones pasa por un servidor remoto.</p>
+    <h2>El coach</h2>
+    <p>En la versión actual, las respuestas del coach se generan en tu dispositivo y nunca se transmiten a ningún sitio. Si una versión futura añade un coach en la nube, esta política se actualizará antes de que se publique esa versión, describiendo exactamente qué se envía y a quién.</p>
+    <h2>Eliminar tus datos</h2>
+    <p>Al eliminar la app se borran todos los datos almacenados en tu dispositivo. Si usaste la sincronización con iCloud, también puedes eliminarlos en Ajustes &rsaquo; [tu nombre] &rsaquo; iCloud &rsaquo; Gestionar Almacenamiento de la Cuenta.</p>
+    <h2>Menores</h2>
+    <p>Esta app no está dirigida a menores y, dada su temática, está pensada para usuarios de 17 años o más.</p>
+    <h2>Cambios en esta política</h2>
+    <p>Si alguna vez cambia lo que recopila la app, esta página cambiará con ello y el cambio se indicará en las notas de la versión de la app.</p>
+    <h2>Contacto</h2>
+    <div class="contact"><p><strong>Correo electrónico:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-pl" lang="pl" hidden>
+    <h1>Polityka prywatności</h1>
+    <p class="meta">No Contact: Closure &middot; Ostatnia aktualizacja: 23 września 2026 r.</p>
+    <h2>W skrócie</h2>
+    <p>Nie zbieramy twoich danych. Wszystko, co wpisujesz — historia twojego związku, wpisy w dzienniku, wiadomości z coachem, niewysłane wiadomości i dziennik nawrotów — pozostaje na twoim urządzeniu. Jeśli korzystasz z iCloud, dane są synchronizowane wyłącznie z twoim prywatnym kontem iCloud, do którego nie mamy wglądu ani dostępu. Nie ma serwerów przechowujących twoje osobiste treści, żadnego SDK analitycznego, żadnego SDK reklamowego ani żadnej strony trzeciej, która otrzymywałaby twoje dane.</p>
+    <h2>Co zbieramy</h2>
+    <p>Nic, co pozwalałoby cię zidentyfikować. Aplikacja nie wymaga konta, adresu e-mail ani logowania. Zakupy są w całości obsługiwane przez Apple za pośrednictwem App Store; nigdy nie widzimy twoich danych płatniczych.</p>
+    <h2>Synchronizacja z iCloud</h2>
+    <p>Jeśli na urządzeniu jest zalogowane twoje konto iCloud, twoje dane mogą być synchronizowane między twoimi urządzeniami za pomocą CloudKit od Apple, w twojej własnej prywatnej bazie danych. Nie mamy dostępu do tych danych.</p>
+    <h2>Powiadomienia</h2>
+    <p>Jeśli włączysz powiadomienia, są one planowane lokalnie na twoim urządzeniu. Żadna treść powiadomień nie przechodzi przez zdalny serwer.</p>
+    <h2>Coach</h2>
+    <p>W obecnej wersji odpowiedzi coacha są generowane na twoim urządzeniu i nigdy nie są nigdzie przesyłane. Jeśli przyszła wersja wprowadzi coacha działającego w chmurze, ta polityka zostanie zaktualizowana przed wydaniem tej wersji i dokładnie opisze, co jest wysyłane i do kogo.</p>
+    <h2>Usuwanie danych</h2>
+    <p>Usunięcie aplikacji usuwa wszystkie dane zapisane na twoim urządzeniu. Jeśli używana była synchronizacja z iCloud, możesz też usunąć te dane w Ustawienia &rsaquo; [twoje imię i nazwisko] &rsaquo; iCloud &rsaquo; Zarządzaj pamięcią masową konta.</p>
+    <h2>Dzieci</h2>
+    <p>Ta aplikacja nie jest skierowana do dzieci i ze względu na swoją tematykę jest przeznaczona dla osób w wieku 17 lat i starszych.</p>
+    <h2>Zmiany w tej polityce</h2>
+    <p>Jeśli kiedykolwiek zmieni się to, co zbiera aplikacja, ta strona zmieni się razem z tym, a zmiana zostanie odnotowana w informacjach o wersji aplikacji.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-sv" lang="sv" hidden>
+    <h1>Integritetspolicy</h1>
+    <p class="meta">No Contact: Closure &middot; Senast uppdaterad 23 september 2026</p>
+    <h2>Kortversionen</h2>
+    <p>Vi samlar inte in dina data. Allt du matar in – din relationshistorik, dagboksanteckningar, meddelanden med coachen, osända meddelanden och din återfallslogg – stannar på din enhet. Om du använder iCloud synkas det bara till ditt eget privata iCloud-konto, som vi inte kan se eller komma åt. Det finns inga servrar som lagrar ditt personliga innehåll, inget analys-SDK, inget annons-SDK och ingen tredje part som tar emot dina data.</p>
+    <h2>Vad vi samlar in</h2>
+    <p>Inget som identifierar dig. Appen kräver inget konto, ingen e-postadress och ingen inloggning. Köp hanteras helt av Apple via App Store; vi ser aldrig dina betalningsuppgifter.</p>
+    <h2>iCloud-synkning</h2>
+    <p>Om du är inloggad i iCloud kan dina data synkas mellan dina egna enheter med Apples CloudKit, i din egen privata databas. Vi har inte tillgång till dessa data.</p>
+    <h2>Notiser</h2>
+    <p>Om du slår på notiser schemaläggs de lokalt på din enhet. Inget notisinnehåll passerar via en fjärrserver.</p>
+    <h2>Coachen</h2>
+    <p>I den nuvarande versionen genereras coachens svar på din enhet och skickas aldrig någonstans. Om en framtida version lägger till en molnbaserad coach kommer den här policyn att uppdateras innan den versionen släpps, med en exakt beskrivning av vad som skickas och till vem.</p>
+    <h2>Radera dina data</h2>
+    <p>Om du raderar appen tas alla data som lagras på din enhet bort. Om du har använt iCloud-synkning kan du även ta bort dem under Inställningar &rsaquo; [ditt namn] &rsaquo; iCloud &rsaquo; Hantera lagring för kontot.</p>
+    <h2>Barn</h2>
+    <p>Den här appen riktar sig inte till barn och är, med tanke på ämnet, avsedd för användare som är 17 år eller äldre.</p>
+    <h2>Ändringar i den här policyn</h2>
+    <p>Om det appen samlar in någonsin ändras kommer den här sidan att ändras i takt med det, och ändringen kommer att anges i appens versionsinformation.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-post:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-nb" lang="nb" hidden>
+    <h1>Personvernerklæring</h1>
+    <p class="meta">No Contact: Closure &middot; Sist oppdatert 23. september 2026</p>
+    <h2>Kortversjonen</h2>
+    <p>Vi samler ikke inn dataene dine. Alt du legger inn – forholdshistorikken din, dagbokinnlegg, meldinger med coachen, usendte meldinger og tilbakefallsloggen din – blir værende på enheten din. Hvis du bruker iCloud, synkroniseres det bare til din egen private iCloud-konto, som vi ikke kan se eller få tilgang til. Det finnes ingen servere som lagrer det personlige innholdet ditt, ingen analyse-SDK, ingen reklame-SDK og ingen tredjepart som mottar dataene dine.</p>
+    <h2>Hva vi samler inn</h2>
+    <p>Ingenting som identifiserer deg. Appen krever ingen konto, e-postadresse eller pålogging. Kjøp håndteres fullt og helt av Apple via App Store; vi ser aldri betalingsopplysningene dine.</p>
+    <h2>iCloud-synkronisering</h2>
+    <p>Hvis du er logget på iCloud, kan dataene dine synkroniseres mellom dine egne enheter ved hjelp av Apples CloudKit, i din egen private database. Vi har ikke tilgang til disse dataene.</p>
+    <h2>Varslinger</h2>
+    <p>Hvis du slår på varslinger, planlegges de lokalt på enheten din. Ikke noe varslingsinnhold går via en ekstern server.</p>
+    <h2>Coachen</h2>
+    <p>I den nåværende versjonen genereres coachens svar på enheten din og overføres aldri noe sted. Hvis en fremtidig versjon legger til en skybasert coach, vil denne erklæringen bli oppdatert før den versjonen lanseres, med en nøyaktig beskrivelse av hva som sendes og til hvem.</p>
+    <h2>Slette dataene dine</h2>
+    <p>Når du sletter appen, fjernes alle data som er lagret på enheten din. Hvis du har brukt iCloud-synkronisering, kan du også fjerne dem under Innstillinger &rsaquo; [navnet ditt] &rsaquo; iCloud &rsaquo; Administrer kontolagring.</p>
+    <h2>Barn</h2>
+    <p>Denne appen er ikke rettet mot barn og er, på grunn av temaet, beregnet på brukere som er 17 år eller eldre.</p>
+    <h2>Endringer i denne erklæringen</h2>
+    <p>Hvis det appen samler inn noen gang endres, vil denne siden endres i tråd med det, og endringen vil bli nevnt i appens versjonsmerknader.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-post:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-da" lang="da" hidden>
+    <h1>Privatlivspolitik</h1>
+    <p class="meta">No Contact: Closure &middot; Senest opdateret 23. september 2026</p>
+    <h2>Den korte version</h2>
+    <p>Vi indsamler ikke dine data. Alt, hvad du indtaster – din forholdshistorik, dagbogsnotater, beskeder med coachen, usendte beskeder og din tilbagefaldslog – bliver på din enhed. Hvis du bruger iCloud, synkroniseres det kun til din egen private iCloud-konto, som vi ikke kan se eller få adgang til. Der er ingen servere, der gemmer dit personlige indhold, intet analyse-SDK, intet annonce-SDK og ingen tredjepart, der modtager dine data.</p>
+    <h2>Hvad vi indsamler</h2>
+    <p>Intet, der identificerer dig. Appen kræver ingen konto, e-mailadresse eller login. Køb håndteres udelukkende af Apple via App Store; vi ser aldrig dine betalingsoplysninger.</p>
+    <h2>iCloud-synkronisering</h2>
+    <p>Hvis du er logget ind på iCloud, kan dine data synkroniseres mellem dine egne enheder via Apples CloudKit i din egen private database. Vi har ikke adgang til disse data.</p>
+    <h2>Notifikationer</h2>
+    <p>Hvis du slår notifikationer til, planlægges de lokalt på din enhed. Intet notifikationsindhold går gennem en ekstern server.</p>
+    <h2>Coachen</h2>
+    <p>I den nuværende version genereres coachens svar på din enhed og overføres aldrig nogen steder hen. Hvis en fremtidig version tilføjer en skybaseret coach, bliver denne politik opdateret, før den version udkommer, med en præcis beskrivelse af, hvad der sendes og til hvem.</p>
+    <h2>Sådan sletter du dine data</h2>
+    <p>Når du sletter appen, fjernes alle data, der er gemt på din enhed. Hvis du har brugt iCloud-synkronisering, kan du også fjerne dem under Indstillinger &rsaquo; [dit navn] &rsaquo; iCloud &rsaquo; Administrer kontolagringsplads.</p>
+    <h2>Børn</h2>
+    <p>Denne app er ikke rettet mod børn og er på grund af emnet beregnet til brugere på 17 år og derover.</p>
+    <h2>Ændringer af denne politik</h2>
+    <p>Hvis det, appen indsamler, nogensinde ændres, ændres denne side også, og ændringen vil blive nævnt i appens versionsnoter.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <footer>No Contact: Closure &middot; <a href="privacy.html" data-page="privacy.html">Privacy</a> &middot; <a href="terms.html" data-page="terms.html">Terms</a> &middot; <a href="support.html" data-page="support.html">Support</a></footer>
 </div>
+<script>
+(function () {
+  var ORDER = ["en", "de", "nl", "fr", "it", "es", "pl", "sv", "nb", "da"];
+  var LANGS = {"en":{"label":"English","title":"Privacy Policy — No Contact: Closure","pick":"Language","nav":["Privacy","Terms","Support"]},"de":{"label":"Deutsch","title":"Datenschutzerklärung — No Contact: Closure","pick":"Sprache","nav":["Datenschutz","Nutzungsbedingungen","Support"]},"nl":{"label":"Nederlands","title":"Privacybeleid — No Contact: Closure","pick":"Taal","nav":["Privacy","Voorwaarden","Support"]},"fr":{"label":"Français","title":"Politique de confidentialité — No Contact: Closure","pick":"Langue","nav":["Confidentialité","Conditions","Assistance"]},"it":{"label":"Italiano","title":"Informativa sulla privacy — No Contact: Closure","pick":"Lingua","nav":["Privacy","Termini","Supporto"]},"es":{"label":"Español","title":"Política de privacidad — No Contact: Closure","pick":"Idioma","nav":["Privacidad","Términos","Soporte"]},"pl":{"label":"Polski","title":"Polityka prywatności — No Contact: Closure","pick":"Język","nav":["Prywatność","Warunki","Pomoc"]},"sv":{"label":"Svenska","title":"Integritetspolicy — No Contact: Closure","pick":"Språk","nav":["Integritet","Villkor","Support"]},"nb":{"label":"Norsk","title":"Personvernerklæring — No Contact: Closure","pick":"Språk","nav":["Personvern","Vilkår","Brukerstøtte"]},"da":{"label":"Dansk","title":"Privatlivspolitik — No Contact: Closure","pick":"Sprog","nav":["Privatliv","Vilkår","Support"]}};
+  var bar = document.getElementById('lang-bar');
+  var sel = document.getElementById('lang-select');
+  var navLinks = document.querySelectorAll('footer a[data-page]');
+
+  function norm(code) {
+    if (!code) return null;
+    var base = String(code).toLowerCase().split(/[-_]/)[0];
+    if (base === 'no' || base === 'nn' || base === 'nb') base = 'nb';
+    return Object.prototype.hasOwnProperty.call(LANGS, base) ? base : null;
+  }
+
+  function show(code) {
+    for (var i = 0; i < ORDER.length; i++) {
+      var s = document.getElementById('lang-' + ORDER[i]);
+      if (s) s.hidden = ORDER[i] !== code;
+    }
+    document.documentElement.lang = code;
+    document.title = LANGS[code].title;
+    sel.value = code;
+    sel.setAttribute('aria-label', LANGS[code].pick);
+    for (var j = 0; j < navLinks.length; j++) {
+      navLinks[j].textContent = LANGS[code].nav[j];
+      navLinks[j].setAttribute('href', navLinks[j].getAttribute('data-page') + '?lang=' + code);
+    }
+  }
+
+  function initial() {
+    var q = null;
+    try { q = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    var fromQuery = norm(q);
+    if (fromQuery) return fromQuery;
+    var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language];
+    for (var i = 0; i < prefs.length; i++) {
+      var c = norm(prefs[i]);
+      if (c) return c;
+    }
+    return 'en';
+  }
+
+  for (var i = 0; i < ORDER.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = ORDER[i];
+    opt.lang = ORDER[i];
+    opt.textContent = LANGS[ORDER[i]].label;
+    sel.appendChild(opt);
+  }
+
+  sel.addEventListener('change', function () {
+    show(sel.value);
+    try {
+      var u = new URL(window.location.href);
+      u.searchParams.set('lang', sel.value);
+      history.replaceState(null, '', u.toString());
+    } catch (e) {}
+  });
+
+  bar.hidden = false;
+  show(initial());
+})();
+</script>
 </body>
 </html>

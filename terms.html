@@ -77,36 +77,362 @@
     color: var(--muted);
     font-size: .92rem;
   }
+  [hidden] { display: none !important; }
+  .lang-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin: -1.25rem 0 1rem;
+  }
+  .lang-bar select {
+    font: inherit;
+    font-size: .9rem;
+    line-height: 1.3;
+    max-width: 100%;
+    color: var(--text);
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: .3rem .5rem;
+    color-scheme: light dark;
+    cursor: pointer;
+  }
+  .lang-bar select:focus-visible {
+    outline: 2px solid var(--muted);
+    outline-offset: 2px;
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="lang-bar" id="lang-bar" hidden>
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
 
-  <h1>Terms of Use</h1>
-  <p class="meta">No Contact: Closure &middot; Last updated 23 September 2026</p>
-  <div class="callout"><p><strong>Not medical or mental health care.</strong> This app is a self-guided support tool. It is not therapy, medical treatment, or a substitute for professional care, and it is not equipped to handle a crisis. If you are in crisis or thinking about harming yourself, contact emergency services or a crisis line immediately — in the US, call or text 988.</p></div>
-  <h2>Age requirement</h2>
-  <p>You must be at least 17 years old to use this app.</p>
-  <h2>Your data</h2>
-  <p>The app has no accounts. Your data lives on your device and, optionally, your own private iCloud. You are responsible for keeping your device secure, since anyone with access to it can read what you've written in the app.</p>
-  <h2>Subscriptions and free trial</h2>
-  <p>Some features require a paid plan purchased through the App Store. The monthly plan includes a 7-day free trial for eligible new subscribers; if you don't cancel before the trial ends, it converts to a paid monthly subscription. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period, and your account is charged for renewal within 24 hours before the end of the current period. You can manage or cancel your subscription in your App Store account settings at any time.</p>
-  <h2>Lifetime purchase</h2>
-  <p>The lifetime plan is a one-time, non-renewing purchase that unlocks full access to this app on your Apple Account indefinitely.</p>
-  <h2>Refunds</h2>
-  <p>All purchases are processed by Apple. Refund requests go through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
-  <h2>Acceptable use</h2>
-  <p>Use the app for its intended purpose. Don't attempt to reverse engineer it, resell access to it, or use it in a way that could harm another person.</p>
-  <h2>No warranty</h2>
-  <p>The app is provided as is. We work to keep it accurate and working, but we don't guarantee any particular outcome, including how quickly or fully you recover from a breakup.</p>
-  <h2>Limitation of liability</h2>
-  <p>To the extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from your use of the app.</p>
-  <h2>Changes</h2>
-  <p>These terms may be updated as the app changes. Continuing to use the app after an update means you accept the revised terms.</p>
-  <h2>Contact</h2>
-  <div class="contact"><p><strong>Email:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  <section id="lang-en" lang="en">
+    <h1>Terms of Use</h1>
+    <p class="meta">No Contact: Closure &middot; Last updated 23 September 2026</p>
+    <div class="callout"><p><strong>Not medical or mental health care.</strong> This app is a self-guided support tool. It is not therapy, medical treatment, or a substitute for professional care, and it is not equipped to handle a crisis. If you are in crisis or thinking about harming yourself, contact emergency services or a crisis line immediately — in the US, call or text 988.</p></div>
+    <h2>Age requirement</h2>
+    <p>You must be at least 17 years old to use this app.</p>
+    <h2>Your data</h2>
+    <p>The app has no accounts. Your data lives on your device and, optionally, your own private iCloud. You are responsible for keeping your device secure, since anyone with access to it can read what you've written in the app.</p>
+    <h2>Subscriptions and free trial</h2>
+    <p>Some features require a paid plan purchased through the App Store. The monthly plan includes a 7-day free trial for eligible new subscribers; if you don't cancel before the trial ends, it converts to a paid monthly subscription. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period, and your account is charged for renewal within 24 hours before the end of the current period. You can manage or cancel your subscription in your App Store account settings at any time.</p>
+    <h2>Lifetime purchase</h2>
+    <p>The lifetime plan is a one-time, non-renewing purchase that unlocks full access to this app on your Apple Account indefinitely.</p>
+    <h2>Refunds</h2>
+    <p>All purchases are processed by Apple. Refund requests go through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Acceptable use</h2>
+    <p>Use the app for its intended purpose. Don't attempt to reverse engineer it, resell access to it, or use it in a way that could harm another person.</p>
+    <h2>No warranty</h2>
+    <p>The app is provided as is. We work to keep it accurate and working, but we don't guarantee any particular outcome, including how quickly or fully you recover from a breakup.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from your use of the app.</p>
+    <h2>Changes</h2>
+    <p>These terms may be updated as the app changes. Continuing to use the app after an update means you accept the revised terms.</p>
+    <h2>Contact</h2>
+    <div class="contact"><p><strong>Email:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
 
-  <footer>No Contact: Closure &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="support.html">Support</a></footer>
+  <section id="lang-de" lang="de" hidden>
+    <h1>Nutzungsbedingungen</h1>
+    <p class="meta">No Contact: Closure &middot; Zuletzt aktualisiert am 23. September 2026</p>
+    <div class="callout"><p><strong>Keine medizinische oder psychologische Versorgung.</strong> Diese App ist ein Hilfsmittel zur Selbsthilfe. Sie ist keine Therapie, keine medizinische Behandlung und kein Ersatz für professionelle Hilfe, und sie ist nicht dafür ausgelegt, mit einer Krise umzugehen. Wenn du dich in einer Krise befindest oder daran denkst, dir etwas anzutun, wende dich sofort an den Notruf oder eine Krisenhotline – in den USA kannst du die 988 anrufen oder ihr eine SMS schicken.</p></div>
+    <h2>Mindestalter</h2>
+    <p>Du musst mindestens 17 Jahre alt sein, um diese App zu nutzen.</p>
+    <h2>Deine Daten</h2>
+    <p>Die App hat keine Accounts. Deine Daten befinden sich auf deinem Gerät und optional in deiner eigenen privaten iCloud. Du bist dafür verantwortlich, dein Gerät zu schützen, da jede Person mit Zugriff darauf lesen kann, was du in der App geschrieben hast.</p>
+    <h2>Abonnements und kostenloser Probezeitraum</h2>
+    <p>Einige Funktionen erfordern einen kostenpflichtigen Tarif, der über den App Store gekauft wird. Der Monatstarif enthält für berechtigte neue Abonnenten einen kostenlosen Probezeitraum von 7 Tagen; wenn du nicht vor Ablauf des Probezeitraums kündigst, geht er in ein kostenpflichtiges Monatsabonnement über. Die Zahlung wird bei Bestätigung des Kaufs über deinen Apple Account abgerechnet. Abonnements verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums gekündigt werden, und die Verlängerung wird deinem Account innerhalb von 24 Stunden vor Ende des aktuellen Zeitraums berechnet. Du kannst dein Abonnement jederzeit in den Einstellungen deines App Store-Accounts verwalten oder kündigen.</p>
+    <h2>Lifetime-Kauf</h2>
+    <p>Der Lifetime-Tarif ist ein einmaliger Kauf ohne Verlängerung, der den vollen Zugriff auf diese App für deinen Apple Account zeitlich unbegrenzt freischaltet.</p>
+    <h2>Erstattungen</h2>
+    <p>Alle Käufe werden von Apple abgewickelt. Anträge auf Erstattung laufen über Apple unter <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Zulässige Nutzung</h2>
+    <p>Nutze die App für ihren vorgesehenen Zweck. Versuche nicht, sie per Reverse Engineering zurückzuentwickeln, den Zugang zu ihr weiterzuverkaufen oder sie auf eine Weise zu nutzen, die einer anderen Person schaden könnte.</p>
+    <h2>Keine Gewährleistung</h2>
+    <p>Die App wird so bereitgestellt, wie sie ist. Wir bemühen uns, sie korrekt und funktionsfähig zu halten, garantieren aber kein bestimmtes Ergebnis – auch nicht, wie schnell oder wie vollständig du dich von einer Trennung erholst.</p>
+    <h2>Haftungsbeschränkung</h2>
+    <p>Soweit gesetzlich zulässig, haften wir nicht für mittelbare Schäden, Nebenschäden oder Folgeschäden, die aus deiner Nutzung der App entstehen.</p>
+    <h2>Änderungen</h2>
+    <p>Diese Bedingungen können aktualisiert werden, wenn sich die App ändert. Wenn du die App nach einer Aktualisierung weiter nutzt, akzeptierst du die überarbeiteten Bedingungen.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-Mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-nl" lang="nl" hidden>
+    <h1>Gebruiksvoorwaarden</h1>
+    <p class="meta">No Contact: Closure &middot; Laatst bijgewerkt op 23 september 2026</p>
+    <div class="callout"><p><strong>Geen medische of geestelijke gezondheidszorg.</strong> Deze app is een hulpmiddel voor zelfhulp. Het is geen therapie, geen medische behandeling en geen vervanging voor professionele zorg, en het is niet toegerust om met een crisis om te gaan. Als je in een crisis zit of erover denkt jezelf iets aan te doen, neem dan direct contact op met de hulpdiensten of een crisislijn — bel of sms in de VS naar 988.</p></div>
+    <h2>Leeftijdsvereiste</h2>
+    <p>Je moet minimaal 17 jaar oud zijn om deze app te gebruiken.</p>
+    <h2>Je gegevens</h2>
+    <p>De app heeft geen accounts. Je gegevens staan op je apparaat en, optioneel, in je eigen privé-iCloud. Je bent zelf verantwoordelijk voor de beveiliging van je apparaat, want iedereen met toegang ertoe kan lezen wat je in de app hebt geschreven.</p>
+    <h2>Abonnementen en gratis proefperiode</h2>
+    <p>Voor sommige functies is een betaald plan nodig dat via de App Store wordt gekocht. Het maandplan bevat een gratis proefperiode van 7 dagen voor nieuwe abonnees die daarvoor in aanmerking komen; als je niet opzegt voordat de proefperiode afloopt, wordt deze omgezet in een betaald maandabonnement. De betaling wordt bij bevestiging van de aankoop in rekening gebracht via je Apple Account. Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd, en de verlenging wordt binnen 24 uur voor het einde van de huidige periode in rekening gebracht bij je account. Je kunt je abonnement op elk moment beheren of opzeggen in de instellingen van je App Store-account.</p>
+    <h2>Lifetime-aankoop</h2>
+    <p>Het lifetime-plan is een eenmalige aankoop die niet wordt verlengd en die voor onbepaalde tijd volledige toegang tot deze app ontgrendelt op je Apple Account.</p>
+    <h2>Terugbetalingen</h2>
+    <p>Alle aankopen worden door Apple verwerkt. Verzoeken om terugbetaling lopen via Apple op <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Aanvaardbaar gebruik</h2>
+    <p>Gebruik de app voor het beoogde doel. Probeer de app niet te reverse-engineeren, toegang ertoe door te verkopen of de app te gebruiken op een manier die een ander persoon kan schaden.</p>
+    <h2>Geen garantie</h2>
+    <p>De app wordt geleverd zoals hij is. We doen ons best om hem juist en werkend te houden, maar we garanderen geen bepaald resultaat, ook niet hoe snel of hoe volledig je herstelt van een relatiebreuk.</p>
+    <h2>Beperking van aansprakelijkheid</h2>
+    <p>Voor zover wettelijk toegestaan zijn we niet aansprakelijk voor indirecte schade, incidentele schade of gevolgschade die voortvloeit uit je gebruik van de app.</p>
+    <h2>Wijzigingen</h2>
+    <p>Deze voorwaarden kunnen worden bijgewerkt wanneer de app verandert. Als je de app na een update blijft gebruiken, betekent dat dat je de herziene voorwaarden accepteert.</p>
+    <h2>Contact</h2>
+    <div class="contact"><p><strong>E-mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-fr" lang="fr" hidden>
+    <h1>Conditions d'utilisation</h1>
+    <p class="meta">No Contact: Closure &middot; Dernière mise à jour le 23 septembre 2026</p>
+    <div class="callout"><p><strong>Ceci n'est pas un soin médical ni un soin de santé mentale.</strong> Cette app est un outil d'accompagnement à utiliser en autonomie. Ce n'est ni une thérapie, ni un traitement médical, ni un substitut à un suivi professionnel, et elle n'est pas conçue pour gérer une situation de crise. Si tu traverses une crise ou si tu penses à te faire du mal, contacte immédiatement les services d'urgence ou une ligne d'écoute — aux États-Unis, appelle le 988 ou envoie un SMS au 988.</p></div>
+    <h2>Âge requis</h2>
+    <p>Tu dois avoir au moins 17 ans pour utiliser cette app.</p>
+    <h2>Tes données</h2>
+    <p>L'app ne comporte pas de compte. Tes données restent sur ton appareil et, si tu le souhaites, dans ton propre iCloud privé. Tu es responsable de la sécurité de ton appareil, car toute personne qui y a accès peut lire ce que tu as écrit dans l'app.</p>
+    <h2>Abonnements et essai gratuit</h2>
+    <p>Certaines fonctionnalités nécessitent une formule payante achetée via l'App Store. La formule mensuelle comprend un essai gratuit de 7 jours pour les nouveaux abonnés éligibles ; si tu ne résilies pas avant la fin de l'essai, celui-ci se convertit en abonnement mensuel payant. Le paiement est débité de ton compte Apple à la confirmation de l'achat. Les abonnements se renouvellent automatiquement, sauf s'ils sont résiliés au moins 24 heures avant la fin de la période en cours, et le renouvellement est débité de ton compte dans les 24 heures précédant la fin de la période en cours. Tu peux gérer ou résilier ton abonnement à tout moment dans les réglages de ton compte App Store.</p>
+    <h2>Achat à vie</h2>
+    <p>La formule à vie est un achat unique, sans renouvellement, qui débloque indéfiniment l'accès complet à cette app sur ton compte Apple.</p>
+    <h2>Remboursements</h2>
+    <p>Tous les achats sont traités par Apple. Les demandes de remboursement se font auprès d'Apple sur <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Utilisation acceptable</h2>
+    <p>Utilise l'app pour l'usage auquel elle est destinée. N'essaie pas d'en faire de l'ingénierie inverse, d'en revendre l'accès ou de l'utiliser d'une manière qui pourrait nuire à une autre personne.</p>
+    <h2>Absence de garantie</h2>
+    <p>L'app est fournie en l'état. Nous faisons en sorte qu'elle reste exacte et fonctionnelle, mais nous ne garantissons aucun résultat particulier, y compris la rapidité ou l'ampleur de ta guérison après une rupture.</p>
+    <h2>Limitation de responsabilité</h2>
+    <p>Dans la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects, accessoires ou consécutifs découlant de ton utilisation de l'app.</p>
+    <h2>Modifications</h2>
+    <p>Ces conditions peuvent être mises à jour à mesure que l'app évolue. Si tu continues à utiliser l'app après une mise à jour, tu acceptes les conditions révisées.</p>
+    <h2>Contact</h2>
+    <div class="contact"><p><strong>E-mail&nbsp;:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-it" lang="it" hidden>
+    <h1>Termini di utilizzo</h1>
+    <p class="meta">No Contact: Closure &middot; Ultimo aggiornamento: 23 settembre 2026</p>
+    <div class="callout"><p><strong>Non è assistenza medica né psicologica.</strong> Questa app è uno strumento di supporto da usare in autonomia. Non è una terapia, un trattamento medico o un sostituto dell'assistenza professionale, e non è in grado di gestire una crisi. Se sei in crisi o stai pensando di farti del male, contatta immediatamente i servizi di emergenza o una linea di supporto per le crisi — negli Stati Uniti, chiama o invia un SMS al 988.</p></div>
+    <h2>Requisiti di età</h2>
+    <p>Devi avere almeno 17 anni per usare questa app.</p>
+    <h2>I tuoi dati</h2>
+    <p>L'app non prevede account. I tuoi dati restano sul tuo dispositivo e, facoltativamente, nel tuo iCloud privato. Sei responsabile della sicurezza del tuo dispositivo, perché chiunque vi abbia accesso può leggere ciò che hai scritto nell'app.</p>
+    <h2>Abbonamenti e prova gratuita</h2>
+    <p>Alcune funzioni richiedono un piano a pagamento acquistato tramite l'App Store. Il piano mensile include una prova gratuita di 7 giorni per i nuovi abbonati idonei; se non annulli prima della fine della prova, questa si converte in un abbonamento mensile a pagamento. Il pagamento viene addebitato sul tuo Apple Account alla conferma dell'acquisto. Gli abbonamenti si rinnovano automaticamente a meno che non vengano annullati almeno 24 ore prima della fine del periodo in corso, e il rinnovo viene addebitato sul tuo account nelle 24 ore precedenti la fine del periodo in corso. Puoi gestire o annullare l'abbonamento in qualsiasi momento dalle impostazioni del tuo account App Store.</p>
+    <h2>Acquisto a vita</h2>
+    <p>Il piano a vita è un acquisto una tantum, senza rinnovo, che sblocca a tempo indeterminato l'accesso completo a questa app sul tuo Apple Account.</p>
+    <h2>Rimborsi</h2>
+    <p>Tutti gli acquisti sono elaborati da Apple. Le richieste di rimborso vanno inoltrate ad Apple tramite <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Uso consentito</h2>
+    <p>Usa l'app per lo scopo previsto. Non tentare di decodificarla (reverse engineering), di rivenderne l'accesso o di usarla in modi che potrebbero danneggiare un'altra persona.</p>
+    <h2>Nessuna garanzia</h2>
+    <p>L'app è fornita così com'è. Ci impegniamo a mantenerla accurata e funzionante, ma non garantiamo alcun risultato specifico, compresi i tempi o la completezza della tua ripresa dopo una rottura.</p>
+    <h2>Limitazione di responsabilità</h2>
+    <p>Nei limiti consentiti dalla legge, non siamo responsabili per danni indiretti, incidentali o consequenziali derivanti dal tuo utilizzo dell'app.</p>
+    <h2>Modifiche</h2>
+    <p>Questi termini possono essere aggiornati man mano che l'app cambia. Continuare a usare l'app dopo un aggiornamento significa accettare i termini modificati.</p>
+    <h2>Contatti</h2>
+    <div class="contact"><p><strong>Email:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-es" lang="es" hidden>
+    <h1>Términos de uso</h1>
+    <p class="meta">No Contact: Closure &middot; Última actualización: 23 de septiembre de 2026</p>
+    <div class="callout"><p><strong>No es atención médica ni de salud mental.</strong> Esta app es una herramienta de apoyo autoguiado. No es terapia, tratamiento médico ni un sustituto de la atención profesional, y no está preparada para gestionar una crisis. Si estás en crisis o piensas en hacerte daño, contacta de inmediato con los servicios de emergencia o una línea de crisis; en EE. UU., llama o envía un SMS al 988.</p></div>
+    <h2>Requisito de edad</h2>
+    <p>Debes tener al menos 17 años para usar esta app.</p>
+    <h2>Tus datos</h2>
+    <p>La app no tiene cuentas. Tus datos se guardan en tu dispositivo y, opcionalmente, en tu propio iCloud privado. Eres responsable de mantener tu dispositivo seguro, ya que cualquier persona con acceso a él puede leer lo que hayas escrito en la app.</p>
+    <h2>Suscripciones y prueba gratuita</h2>
+    <p>Algunas funciones requieren un plan de pago adquirido a través del App Store. El plan mensual incluye una prueba gratuita de 7 días para nuevos suscriptores que cumplan los requisitos; si no cancelas antes de que termine la prueba, se convierte en una suscripción mensual de pago. El pago se carga en tu Cuenta de Apple al confirmar la compra. Las suscripciones se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del final del período actual, y la renovación se cobra en tu cuenta dentro de las 24 horas previas al final del período actual. Puedes gestionar o cancelar tu suscripción en cualquier momento desde los ajustes de tu cuenta del App Store.</p>
+    <h2>Compra vitalicia</h2>
+    <p>El plan vitalicio es una compra única, sin renovación, que desbloquea de forma indefinida el acceso completo a esta app en tu Cuenta de Apple.</p>
+    <h2>Reembolsos</h2>
+    <p>Todas las compras las procesa Apple. Las solicitudes de reembolso se tramitan a través de Apple en <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Uso aceptable</h2>
+    <p>Usa la app para su finalidad prevista. No intentes aplicarle ingeniería inversa, revender el acceso a ella ni usarla de una forma que pueda perjudicar a otra persona.</p>
+    <h2>Sin garantía</h2>
+    <p>La app se ofrece tal cual. Nos esforzamos por mantenerla precisa y en funcionamiento, pero no garantizamos ningún resultado concreto, incluido lo rápido o lo completamente que te recuperes de una ruptura.</p>
+    <h2>Limitación de responsabilidad</h2>
+    <p>En la medida en que lo permita la ley, no somos responsables de los daños indirectos, incidentales o consecuentes derivados de tu uso de la app.</p>
+    <h2>Cambios</h2>
+    <p>Estos términos pueden actualizarse a medida que la app cambie. Si sigues usando la app después de una actualización, aceptas los términos revisados.</p>
+    <h2>Contacto</h2>
+    <div class="contact"><p><strong>Correo electrónico:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-pl" lang="pl" hidden>
+    <h1>Warunki korzystania</h1>
+    <p class="meta">No Contact: Closure &middot; Ostatnia aktualizacja: 23 września 2026 r.</p>
+    <div class="callout"><p><strong>To nie jest opieka medyczna ani opieka w zakresie zdrowia psychicznego.</strong> Ta aplikacja to narzędzie do samodzielnej pracy nad sobą. Nie jest terapią, leczeniem ani zamiennikiem profesjonalnej pomocy i nie jest przystosowana do radzenia sobie z sytuacjami kryzysowymi. Jeśli przeżywasz kryzys lub myślisz o zrobieniu sobie krzywdy, natychmiast skontaktuj się ze służbami ratunkowymi lub telefonem zaufania — w USA zadzwoń lub wyślij SMS pod numer 988.</p></div>
+    <h2>Wymagany wiek</h2>
+    <p>Aby korzystać z tej aplikacji, musisz mieć ukończone 17 lat.</p>
+    <h2>Twoje dane</h2>
+    <p>Aplikacja nie ma kont. Twoje dane znajdują się na twoim urządzeniu i opcjonalnie w twoim prywatnym iCloud. Odpowiadasz za zabezpieczenie swojego urządzenia, ponieważ każdy, kto ma do niego dostęp, może przeczytać twoje wpisy w aplikacji.</p>
+    <h2>Subskrypcje i bezpłatny okres próbny</h2>
+    <p>Niektóre funkcje wymagają płatnego planu kupionego w App Store. Plan miesięczny obejmuje 7-dniowy bezpłatny okres próbny dla uprawnionych nowych subskrybentów; jeśli nie anulujesz go przed końcem okresu próbnego, zamieni się on w płatną subskrypcję miesięczną. Płatność jest pobierana z twojego konta Apple w momencie potwierdzenia zakupu. Subskrypcje odnawiają się automatycznie, chyba że zostaną anulowane co najmniej 24 godziny przed końcem bieżącego okresu, a opłata za odnowienie jest pobierana z twojego konta w ciągu 24 godzin przed końcem bieżącego okresu. Możesz w każdej chwili zarządzać subskrypcją lub ją anulować w ustawieniach swojego konta App Store.</p>
+    <h2>Zakup dożywotni</h2>
+    <p>Plan dożywotni to jednorazowy, nieodnawialny zakup, który bezterminowo odblokowuje pełny dostęp do tej aplikacji na twoim koncie Apple.</p>
+    <h2>Zwroty</h2>
+    <p>Wszystkie zakupy są obsługiwane przez Apple. Prośby o zwrot należy kierować do Apple przez <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Dozwolone korzystanie</h2>
+    <p>Korzystaj z aplikacji zgodnie z jej przeznaczeniem. Nie próbuj poddawać jej inżynierii wstecznej, odsprzedawać dostępu do niej ani używać jej w sposób, który mógłby zaszkodzić innej osobie.</p>
+    <h2>Brak gwarancji</h2>
+    <p>Aplikacja jest udostępniana w takim stanie, w jakim jest. Staramy się, aby była dokładna i działała poprawnie, ale nie gwarantujemy żadnego konkretnego rezultatu, w tym tego, jak szybko i jak w pełni dojdziesz do siebie po rozstaniu.</p>
+    <h2>Ograniczenie odpowiedzialności</h2>
+    <p>W zakresie dozwolonym przez prawo nie ponosimy odpowiedzialności za szkody pośrednie, przypadkowe ani wynikowe powstałe w związku z korzystaniem przez ciebie z aplikacji.</p>
+    <h2>Zmiany</h2>
+    <p>Niniejsze warunki mogą być aktualizowane wraz ze zmianami w aplikacji. Dalsze korzystanie z aplikacji po aktualizacji oznacza akceptację zmienionych warunków.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-sv" lang="sv" hidden>
+    <h1>Användarvillkor</h1>
+    <p class="meta">No Contact: Closure &middot; Senast uppdaterad 23 september 2026</p>
+    <div class="callout"><p><strong>Inte medicinsk vård eller vård för psykisk hälsa.</strong> Den här appen är ett självhjälpsverktyg. Den är inte terapi, medicinsk behandling eller en ersättning för professionell vård, och den är inte utformad för att hantera en kris. Om du befinner dig i kris eller funderar på att skada dig själv, kontakta omedelbart larmtjänsten eller en kristelefon – i USA kan du ringa eller sms:a 988.</p></div>
+    <h2>Ålderskrav</h2>
+    <p>Du måste vara minst 17 år för att använda den här appen.</p>
+    <h2>Dina data</h2>
+    <p>Appen har inga konton. Dina data finns på din enhet och, om du vill, i din egen privata iCloud. Du ansvarar för att hålla din enhet säker, eftersom alla som har tillgång till den kan läsa det du har skrivit i appen.</p>
+    <h2>Abonnemang och gratis provperiod</h2>
+    <p>Vissa funktioner kräver en betald plan som köps via App Store. Månadsplanen innehåller en gratis provperiod på 7 dagar för berättigade nya abonnenter; om du inte avslutar innan provperioden tar slut övergår den till ett betalt månadsabonnemang. Betalningen debiteras ditt Apple-konto när köpet bekräftas. Abonnemang förnyas automatiskt om de inte avslutas minst 24 timmar före slutet av den aktuella perioden, och ditt konto debiteras för förnyelsen inom 24 timmar före slutet av den aktuella perioden. Du kan när som helst hantera eller avsluta ditt abonnemang i inställningarna för ditt App Store-konto.</p>
+    <h2>Livstidsköp</h2>
+    <p>Livstidsplanen är ett engångsköp som inte förnyas och som låser upp full åtkomst till den här appen på ditt Apple-konto på obestämd tid.</p>
+    <h2>Återbetalningar</h2>
+    <p>Alla köp hanteras av Apple. Begäran om återbetalning görs via Apple på <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Godtagbar användning</h2>
+    <p>Använd appen för dess avsedda syfte. Försök inte att bakåtkompilera den, sälja vidare åtkomst till den eller använda den på ett sätt som kan skada en annan person.</p>
+    <h2>Ingen garanti</h2>
+    <p>Appen tillhandahålls i befintligt skick. Vi arbetar för att hålla den korrekt och fungerande, men vi garanterar inget särskilt resultat, inklusive hur snabbt eller hur fullständigt du återhämtar dig efter ett uppbrott.</p>
+    <h2>Ansvarsbegränsning</h2>
+    <p>I den utsträckning lagen tillåter ansvarar vi inte för indirekta skador, oförutsedda skador eller följdskador som uppstår till följd av din användning av appen.</p>
+    <h2>Ändringar</h2>
+    <p>Dessa villkor kan uppdateras när appen förändras. Om du fortsätter att använda appen efter en uppdatering innebär det att du godkänner de reviderade villkoren.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-post:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-nb" lang="nb" hidden>
+    <h1>Vilkår for bruk</h1>
+    <p class="meta">No Contact: Closure &middot; Sist oppdatert 23. september 2026</p>
+    <div class="callout"><p><strong>Ikke medisinsk behandling eller psykisk helsehjelp.</strong> Denne appen er et selvhjelpsverktøy. Den er ikke terapi, medisinsk behandling eller en erstatning for profesjonell hjelp, og den er ikke laget for å håndtere en krise. Hvis du er i krise eller tenker på å skade deg selv, må du umiddelbart kontakte nødetatene eller en krisetelefon – i USA kan du ringe eller sende SMS til 988.</p></div>
+    <h2>Alderskrav</h2>
+    <p>Du må være minst 17 år for å bruke denne appen.</p>
+    <h2>Dataene dine</h2>
+    <p>Appen har ingen kontoer. Dataene dine ligger på enheten din og eventuelt i din egen private iCloud. Du er selv ansvarlig for å holde enheten din sikker, siden alle med tilgang til den kan lese det du har skrevet i appen.</p>
+    <h2>Abonnementer og gratis prøveperiode</h2>
+    <p>Noen funksjoner krever en betalt plan som kjøpes via App Store. Månedsplanen inkluderer en gratis prøveperiode på 7 dager for kvalifiserte nye abonnenter; hvis du ikke sier opp før prøveperioden er over, går den over til et betalt månedsabonnement. Betalingen belastes Apple-kontoen din når kjøpet bekreftes. Abonnementer fornyes automatisk med mindre de sies opp minst 24 timer før slutten av gjeldende periode, og kontoen din belastes for fornyelsen innen 24 timer før slutten av gjeldende periode. Du kan når som helst administrere eller si opp abonnementet ditt i innstillingene for App Store-kontoen din.</p>
+    <h2>Livstidskjøp</h2>
+    <p>Livstidsplanen er et engangskjøp som ikke fornyes, og som låser opp full tilgang til denne appen på Apple-kontoen din på ubestemt tid.</p>
+    <h2>Refusjon</h2>
+    <p>Alle kjøp behandles av Apple. Forespørsler om refusjon går via Apple på <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Akseptabel bruk</h2>
+    <p>Bruk appen til det den er ment for. Ikke forsøk å omvendt utvikle den, videreselge tilgang til den eller bruke den på en måte som kan skade en annen person.</p>
+    <h2>Ingen garanti</h2>
+    <p>Appen leveres som den er. Vi jobber for at den skal være nøyaktig og fungere, men vi garanterer ikke noe bestemt resultat, heller ikke hvor raskt eller hvor fullstendig du kommer deg etter et brudd.</p>
+    <h2>Ansvarsbegrensning</h2>
+    <p>I den grad loven tillater det, er vi ikke ansvarlige for indirekte skader, tilfeldige skader eller følgeskader som oppstår som følge av din bruk av appen.</p>
+    <h2>Endringer</h2>
+    <p>Disse vilkårene kan bli oppdatert etter hvert som appen endres. Hvis du fortsetter å bruke appen etter en oppdatering, betyr det at du godtar de reviderte vilkårene.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-post:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <section id="lang-da" lang="da" hidden>
+    <h1>Brugsvilkår</h1>
+    <p class="meta">No Contact: Closure &middot; Senest opdateret 23. september 2026</p>
+    <div class="callout"><p><strong>Ikke medicinsk eller psykologisk behandling.</strong> Denne app er et selvhjælpsværktøj. Den er ikke terapi, medicinsk behandling eller en erstatning for professionel hjælp, og den er ikke beregnet til at håndtere en krise. Hvis du er i krise eller tænker på at gøre skade på dig selv, så kontakt straks alarmcentralen eller en krisetelefon – i USA kan du ringe eller sende en sms til 988.</p></div>
+    <h2>Alderskrav</h2>
+    <p>Du skal være mindst 17 år for at bruge denne app.</p>
+    <h2>Dine data</h2>
+    <p>Appen har ingen konti. Dine data ligger på din enhed og eventuelt i din egen private iCloud. Du er selv ansvarlig for at holde din enhed sikker, da alle med adgang til den kan læse det, du har skrevet i appen.</p>
+    <h2>Abonnementer og gratis prøveperiode</h2>
+    <p>Nogle funktioner kræver en betalt plan, der købes via App Store. Månedsplanen indeholder en gratis prøveperiode på 7 dage for berettigede nye abonnenter; hvis du ikke opsiger, før prøveperioden slutter, overgår den til et betalt månedsabonnement. Betalingen trækkes på din Apple-konto, når købet bekræftes. Abonnementer fornyes automatisk, medmindre de opsiges mindst 24 timer før udløbet af den aktuelle periode, og din konto opkræves for fornyelsen inden for 24 timer før udløbet af den aktuelle periode. Du kan til enhver tid administrere eller opsige dit abonnement i indstillingerne for din App Store-konto.</p>
+    <h2>Livstidskøb</h2>
+    <p>Livstidsplanen er et engangskøb, der ikke fornyes, og som låser op for fuld adgang til denne app på din Apple-konto på ubestemt tid.</p>
+    <h2>Refusion</h2>
+    <p>Alle køb behandles af Apple. Anmodninger om refusion går gennem Apple på <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Acceptabel brug</h2>
+    <p>Brug appen til dens tilsigtede formål. Forsøg ikke at foretage reverse engineering af den, videresælge adgang til den eller bruge den på en måde, der kan skade en anden person.</p>
+    <h2>Ingen garanti</h2>
+    <p>Appen leveres, som den er. Vi arbejder på at holde den korrekt og funktionsdygtig, men vi garanterer ikke noget bestemt resultat, heller ikke hvor hurtigt eller hvor fuldstændigt du kommer dig over et brud.</p>
+    <h2>Ansvarsbegrænsning</h2>
+    <p>I det omfang loven tillader det, er vi ikke ansvarlige for indirekte skader, hændelige skader eller følgeskader, der opstår som følge af din brug af appen.</p>
+    <h2>Ændringer</h2>
+    <p>Disse vilkår kan blive opdateret, efterhånden som appen ændrer sig. Hvis du fortsætter med at bruge appen efter en opdatering, betyder det, at du accepterer de reviderede vilkår.</p>
+    <h2>Kontakt</h2>
+    <div class="contact"><p><strong>E-mail:</strong> <a href="mailto:tamsnir@gmail.com">tamsnir@gmail.com</a></p></div>
+  </section>
+
+  <footer>No Contact: Closure &middot; <a href="privacy.html" data-page="privacy.html">Privacy</a> &middot; <a href="terms.html" data-page="terms.html">Terms</a> &middot; <a href="support.html" data-page="support.html">Support</a></footer>
 </div>
+<script>
+(function () {
+  var ORDER = ["en", "de", "nl", "fr", "it", "es", "pl", "sv", "nb", "da"];
+  var LANGS = {"en":{"label":"English","title":"Terms of Use — No Contact: Closure","pick":"Language","nav":["Privacy","Terms","Support"]},"de":{"label":"Deutsch","title":"Nutzungsbedingungen — No Contact: Closure","pick":"Sprache","nav":["Datenschutz","Nutzungsbedingungen","Support"]},"nl":{"label":"Nederlands","title":"Gebruiksvoorwaarden — No Contact: Closure","pick":"Taal","nav":["Privacy","Voorwaarden","Support"]},"fr":{"label":"Français","title":"Conditions d'utilisation — No Contact: Closure","pick":"Langue","nav":["Confidentialité","Conditions","Assistance"]},"it":{"label":"Italiano","title":"Termini di utilizzo — No Contact: Closure","pick":"Lingua","nav":["Privacy","Termini","Supporto"]},"es":{"label":"Español","title":"Términos de uso — No Contact: Closure","pick":"Idioma","nav":["Privacidad","Términos","Soporte"]},"pl":{"label":"Polski","title":"Warunki korzystania — No Contact: Closure","pick":"Język","nav":["Prywatność","Warunki","Pomoc"]},"sv":{"label":"Svenska","title":"Användarvillkor — No Contact: Closure","pick":"Språk","nav":["Integritet","Villkor","Support"]},"nb":{"label":"Norsk","title":"Vilkår for bruk — No Contact: Closure","pick":"Språk","nav":["Personvern","Vilkår","Brukerstøtte"]},"da":{"label":"Dansk","title":"Brugsvilkår — No Contact: Closure","pick":"Sprog","nav":["Privatliv","Vilkår","Support"]}};
+  var bar = document.getElementById('lang-bar');
+  var sel = document.getElementById('lang-select');
+  var navLinks = document.querySelectorAll('footer a[data-page]');
+
+  function norm(code) {
+    if (!code) return null;
+    var base = String(code).toLowerCase().split(/[-_]/)[0];
+    if (base === 'no' || base === 'nn' || base === 'nb') base = 'nb';
+    return Object.prototype.hasOwnProperty.call(LANGS, base) ? base : null;
+  }
+
+  function show(code) {
+    for (var i = 0; i < ORDER.length; i++) {
+      var s = document.getElementById('lang-' + ORDER[i]);
+      if (s) s.hidden = ORDER[i] !== code;
+    }
+    document.documentElement.lang = code;
+    document.title = LANGS[code].title;
+    sel.value = code;
+    sel.setAttribute('aria-label', LANGS[code].pick);
+    for (var j = 0; j < navLinks.length; j++) {
+      navLinks[j].textContent = LANGS[code].nav[j];
+      navLinks[j].setAttribute('href', navLinks[j].getAttribute('data-page') + '?lang=' + code);
+    }
+  }
+
+  function initial() {
+    var q = null;
+    try { q = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    var fromQuery = norm(q);
+    if (fromQuery) return fromQuery;
+    var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language];
+    for (var i = 0; i < prefs.length; i++) {
+      var c = norm(prefs[i]);
+      if (c) return c;
+    }
+    return 'en';
+  }
+
+  for (var i = 0; i < ORDER.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = ORDER[i];
+    opt.lang = ORDER[i];
+    opt.textContent = LANGS[ORDER[i]].label;
+    sel.appendChild(opt);
+  }
+
+  sel.addEventListener('change', function () {
+    show(sel.value);
+    try {
+      var u = new URL(window.location.href);
+      u.searchParams.set('lang', sel.value);
+      history.replaceState(null, '', u.toString());
+    } catch (e) {}
+  });
+
+  bar.hidden = false;
+  show(initial());
+})();
+</script>
 </body>
 </html>
